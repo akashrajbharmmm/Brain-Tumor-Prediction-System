@@ -13,7 +13,7 @@ interface Prediction {
   createdAt: string;
 }
 
-const ML_API_BASE = 'http://localhost:5000';
+const ML_API_BASE = 'https://brain-tumor-prediction-system-2-59u0.onrender.com';
 
 function Results() {
   const { id } = useParams();
