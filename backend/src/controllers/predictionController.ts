@@ -17,8 +17,9 @@ export const createPrediction = async (req: AuthRequest, res: Response) => {
     form.append('image', fs.createReadStream(filePath));
 
     const mlResponse = await axios.post(process.env.ML_API_URL as string, form, {
-      headers: form.getHeaders()
-    });
+  headers: form.getHeaders(),
+  timeout: 60000
+});
 
     const { prediction, tumorType, confidence, heatmapUrl } = mlResponse.data;
 
